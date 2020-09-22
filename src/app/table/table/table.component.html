@@ -1,0 +1,36 @@
+
+ <div class="container">
+ <h1 class="title">Listado de usuarios</h1>
+ <div class="row">
+ <div class="col">
+ <div class="form-group">
+<input type="text" class="form-control " name = "filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+ </div>
+ </div>
+ </div>
+ <div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">UserId</th>
+      <th scope="col">id</th>
+      <th scope="col">Title</th>
+      <th scope="col">details</th>
+      <th scope="col">update</th>
+      <th scope="col">delate</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="post">
+    <tr *ngFor = "let registros of post | filter:filterPost">
+      <th >{{registros.userId}}</th>
+      <td>{{registros.id}}</td>
+      <td>{{registros.title}}</td>
+      <td><img (click)="ShowModal(registros.title,registros.body)" class="icono" src="../../../assets/Iconos/menu.png" width="30px"/></td>
+      <td><img (click)=" updatePosts(registros.id)" class="icono" src="../../../assets/Iconos/actualizar.png" width="30px"/></td>
+      <td><img (click)="deletePosts(registros.id)" class="icono" src="../../../assets/Iconos/basura.png" width="30px"/></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
