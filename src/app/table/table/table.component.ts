@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
 import Swal from 'sweetalert2';
-import { title } from 'process';
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
